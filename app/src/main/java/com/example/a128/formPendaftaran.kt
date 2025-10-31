@@ -29,6 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.layout.Spacer
 
 @Composable
 fun FormulirPendaftaran() {
@@ -108,6 +109,9 @@ fun FormulirPendaftaran() {
                 label = {Text(stringResource(id = R.string.nama_lengkap))},
                 modifier = Modifier.width(300.dp)
             )
+
+            Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_small)))
+
         }
     }
 }
