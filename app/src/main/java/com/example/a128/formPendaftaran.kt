@@ -167,6 +167,8 @@ fun FormulirPendaftaran() {
                         .width(300.dp)
                         .height(100.dp)
                 )
+                Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_medium)))
+
             }
         }
     }
