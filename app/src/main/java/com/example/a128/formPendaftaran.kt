@@ -30,6 +30,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.selection.selectable
 
 @Composable
 fun FormulirPendaftaran() {
@@ -112,6 +113,22 @@ fun FormulirPendaftaran() {
 
             Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_small)))
 
+            //jenis kelamin
+            Text(
+                text = stringResource(id = R.string.jenis_kelamin),
+                style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold)
+            )
+            gender.forEach{item ->
+                Row(
+                    modifier = Modifier
+                        .selectable(
+                            selected = textJK == item,
+                            onClick = { textJk == item}
+                        )
+                        .padding(4.dp),
+                    verticalAlignment = Alignment.CenterHorizontally
+                )
+            }
         }
     }
 }
