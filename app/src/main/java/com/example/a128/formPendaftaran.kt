@@ -5,6 +5,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.res.stringResource
 
 @Composable
 fun FormulirPendaftaran() {
@@ -19,4 +20,10 @@ fun FormulirPendaftaran() {
     var alamat by remember { mutableStateOf("") }
     var jenis by remember { mutableStateOf("") }
     var status by remember { mutableStateOf("") }
+
+    //data pilihan gender dan statuskawin
+    val gender = listOf(
+        stringResource(id = R.string.laki_laki),
+        stringResource(id = R.string.perempuan)
+    )
 }
