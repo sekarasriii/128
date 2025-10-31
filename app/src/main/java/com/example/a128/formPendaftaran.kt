@@ -1,10 +1,17 @@
 package com.example.a128
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 
 @Composable
@@ -30,5 +37,20 @@ fun FormulirPendaftaran() {
         stringResource(id = R.string.janda),
         stringResource(id = R.string.lajang),
         stringResource(id = R.string.duda)
+    )
+
+    //background
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(
+                brush = Brush.verticalGradient(
+                    colors = listOf(
+                        colorResource(id = R.color.ungu_muda),
+                        colorResource(id = R.color.ungu_tua)
+                    )
+                )
+            )
+            .padding(dimensionResource(id = R.dimen.padding_small))
     )
 }
