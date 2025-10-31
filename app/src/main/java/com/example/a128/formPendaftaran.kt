@@ -20,6 +20,11 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.Column
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.material3.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 
 @Composable
 fun FormulirPendaftaran() {
@@ -66,6 +71,27 @@ fun FormulirPendaftaran() {
             modifier = Modifier
                 .fillMaxWidth()
                 .verticalScroll(rememberScrollState())
-        )
+        ) {
+            //Header
+            Text(
+                text = stringResource(id = R.string.app_name),
+                style = MaterialTheme.typography.headlineSmall.copy(
+                    fontWeight = FontWeight.Bold
+                ),
+                color = Color.White,
+                modifier = Modifier
+                    .background(
+                        brush = Brush.horizontalGradient(
+                            colors = listOf(
+                                colorResource(id = R.color.ungu_muda),
+                                colorResource(id = R.color.ungu_dalam)
+                            )
+                        )
+                    )
+                    .fillMaxWidth()
+                    .padding(vertical = dimensionResource(id = R.dimen.padding_medium)),
+                textAlign = TextAlign.Center
+            )
+        }
     }
 }
