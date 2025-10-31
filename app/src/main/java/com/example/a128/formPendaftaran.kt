@@ -19,12 +19,16 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.material3.Text
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun FormulirPendaftaran() {
@@ -91,6 +95,18 @@ fun FormulirPendaftaran() {
                     .fillMaxWidth()
                     .padding(vertical = dimensionResource(id = R.dimen.padding_medium)),
                 textAlign = TextAlign.Center
+            )
+
+            Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_small)))
+
+            //input nama lengkap
+            OutlinedTextField(
+                value = textNama,
+                onValueChange =  {textNama = it},
+                singleLine = true,
+                shape = MaterialTheme.shapes.large,
+                label = {Text(stringResource(id = R.string.nama_lengkap))},
+                modifier = Modifier.width(300.dp)
             )
         }
     }
