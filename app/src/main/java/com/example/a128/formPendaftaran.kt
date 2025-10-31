@@ -33,6 +33,8 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.RadioButton
 import androidx.compose.foundation.layout.Row
 import androidx.compose.ui.Alignment
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 
 @Composable
 fun FormulirPendaftaran() {
@@ -169,6 +171,25 @@ fun FormulirPendaftaran() {
                 )
                 Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_medium)))
 
+                // Tombol Submit
+                Button(
+                    onClick = {
+                        nama = textNama
+                        jenis = textJK
+                        status = textStatus
+                        alamat = textAlamat
+                    },
+                    modifier = Modifier
+                        .width(200.dp)
+                        .height(50.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = colorResource(id = R.color.ungu_dalam),
+                        contentColor = Color.White
+                    ),
+                    enabled = textNama.isNotEmpty() && textAlamat.isNotEmpty()
+                ) {
+                    Text(stringResource(id = R.string.submit), fontWeight = FontWeight.Bold)
+                }
             }
         }
     }
