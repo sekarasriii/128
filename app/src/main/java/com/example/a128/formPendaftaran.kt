@@ -41,7 +41,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.shape.RoundedCornerShape
 
 @Composable
-fun FormulirPendaftaran() {
+fun FormulirPendaftaran(modifier: Modifier = Modifier) {
     //variabel untuk input pengguna
     var textNama by remember { mutableStateOf("") }
     var textAlamat by remember {mutableStateOf("")}
