@@ -26,4 +26,9 @@ fun FormulirPendaftaran() {
         stringResource(id = R.string.laki_laki),
         stringResource(id = R.string.perempuan)
     )
+    val statusKawin = listOf(
+        stringResource(id = R.string.janda),
+        stringResource(id = R.string.lajang),
+        stringResource(id = R.string.duda)
+    )
 }
