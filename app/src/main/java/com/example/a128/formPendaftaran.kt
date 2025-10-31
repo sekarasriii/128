@@ -35,6 +35,10 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.ui.Alignment
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.CardDefaults
+import androidx.compose.ui.draw.clip
+import androidx.compose.foundation.shape.RoundedCornerShape
 
 @Composable
 fun FormulirPendaftaran() {
@@ -193,6 +197,19 @@ fun FormulirPendaftaran() {
 
                 Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_medium)))
 
+                // Card hasil submit
+                if (nama.isNotEmpty() || jenis.isNotEmpty() || status.isNotEmpty() || alamat.isNotEmpty()) {
+                    ElevatedCard(
+                        elevation = CardDefaults.cardElevation(defaultElevation = 12.dp),
+                        colors = CardDefaults.cardColors(
+                            containerColor = colorResource(id = R.color.hitam_card)
+                        ),
+                        modifier = Modifier
+                            .padding(dimensionResource(id = R.dimen.padding_small))
+                            .clip(RoundedCornerShape(dimensionResource(id = R.dimen.corner_radius)))
+                            .width(320.dp)
+                            .height(150.dp)
+                    )
             }
         }
     }
