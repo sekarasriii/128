@@ -190,6 +190,9 @@ fun FormulirPendaftaran() {
                 ) {
                     Text(stringResource(id = R.string.submit), fontWeight = FontWeight.Bold)
                 }
+
+                Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_medium)))
+
             }
         }
     }
