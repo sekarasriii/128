@@ -158,6 +158,15 @@ fun FormulirPendaftaran() {
 
                 Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_small)))
 
+                // Alamat
+                OutlinedTextField(
+                    value = textAlamat,
+                    onValueChange = { textAlamat = it },
+                    label = { Text(stringResource(id = R.string.alamat)) },
+                    modifier = Modifier
+                        .width(300.dp)
+                        .height(100.dp)
+                )
             }
         }
     }
