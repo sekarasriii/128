@@ -136,7 +136,25 @@ fun FormulirPendaftaran() {
 
                 Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_small)))
 
-
+                //status perkawinan
+                Text(
+                    text = stringResource(id = R.string.status_perkawinan),
+                    style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold)
+                )
+                statusKawin.forEach { item ->
+                    Row(
+                        modifier = Modifier
+                            .selectable(
+                                selected = textStatus == item,
+                                onClick = { textStatus = item }
+                            )
+                            .padding(4.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(selected = textStatus == item, onClick = { textStatus = item })
+                        Text(text = item)
+                    }
+                }
             }
         }
     }
