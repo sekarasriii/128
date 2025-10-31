@@ -31,6 +31,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.material3.RadioButton
+import androidx.compose.foundation.layout.Row
 
 @Composable
 fun FormulirPendaftaran() {
@@ -123,11 +125,14 @@ fun FormulirPendaftaran() {
                     modifier = Modifier
                         .selectable(
                             selected = textJK == item,
-                            onClick = { textJk == item}
+                            onClick = { textJK == item}
                         )
                         .padding(4.dp),
                     verticalAlignment = Alignment.CenterHorizontally
-                )
+                ) {
+                    RadioButton(selected = textJK == item, onClick = {textJK = item})
+                    Text(text = item)
+                }
             }
         }
     }
