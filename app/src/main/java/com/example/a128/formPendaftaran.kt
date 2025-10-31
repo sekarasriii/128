@@ -13,7 +13,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
@@ -134,6 +133,10 @@ fun FormulirPendaftaran() {
                     RadioButton(selected = textJK == item, onClick = {textJK = item})
                     Text(text = item)
                 }
+
+                Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_small)))
+
+
             }
         }
     }
